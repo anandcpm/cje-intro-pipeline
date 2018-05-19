@@ -23,7 +23,7 @@ pipeline {
         }
       }
       steps {
-        echo "Deploying ${params.APP_VERSION}."
+        echo "Deploying ${APP_VERSION}."
       }
     }
   }
