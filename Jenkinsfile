@@ -1,7 +1,9 @@
 pipeline {
+  
   agent {
     label 'jdk8'
   }
+  
   stages {
     stage('Say Hello') {
       steps {
@@ -11,8 +13,7 @@ pipeline {
         echo "${TEST_USER_PSW}"
       }
     }
-   }
-   stage('Get Kernel') {
+    stage('Get Kernel') {
       steps {
         script {
           try {
