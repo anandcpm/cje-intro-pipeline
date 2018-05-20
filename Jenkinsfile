@@ -25,15 +25,17 @@ pipeline {
           stage('Java 8') {
             agent { label 'jdk8' }
             steps {
-              sh 'java -version'
-              sleep time: 10, unit: 'SECONDS'
+              container('maven9'){
+                sh 'mvn -v'
+              }
             }
           }
           stage('Java 9') {
             agent { label 'jdk9' }
             steps {
-              sh 'java -version'
-              sleep time: 20, unit: 'SECONDS'
+              container('maven8'){
+                sh 'mvn -v'
+              }
              }
            }
          }
