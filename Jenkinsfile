@@ -25,7 +25,7 @@ pipeline {
           stage('Java 8') {
             agent { label 'jdk8' }
             steps {
-              container('maven9'){
+              container('maven8'){
                 sh 'mvn -v'
               }
             }
@@ -33,7 +33,7 @@ pipeline {
           stage('Java 9') {
             agent { label 'jdk9' }
             steps {
-              container('maven8'){
+              container('maven9'){
                 sh 'mvn -v'
               }
              }
